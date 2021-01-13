@@ -19,7 +19,7 @@ pipeline {
         stage("Second step") {
             steps {
                 sh 'ssh -p 221 lxuser@otobo-lx \'uptime\''
-                sh 'ssh -p 221 lxuser@otobo-lx \'dmidecode -s baseboard-product-name\''
+                sh 'ssh -p 221 lxuser@otobo-lx \'free -h | grep \'Mem:\' | awk  \'{print $2}\'\''
             }
         }
     }
